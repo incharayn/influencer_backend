@@ -13,10 +13,6 @@ def campaign():
     data = request.get_json()
 
     campaign_name = data.get("campaignName")
-    budget = data.get("campaignBudget")
-    age_group = data.get("ageGroup")
-    location = data.get("location")
-    niche = data.get("niche")
     influencer_count = data.get("influencerCount")
 
     print("Received Campaign:", data)
@@ -27,3 +23,6 @@ def campaign():
         "campaign": campaign_name,
         "influencers_requested": influencer_count
     })
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
